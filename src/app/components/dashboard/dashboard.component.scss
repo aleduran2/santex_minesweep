@@ -1,0 +1,6 @@
+.dashboard {
+  height: 100%;
+  &__reset:focus {
+    box-shadow: none;
+  }
+}

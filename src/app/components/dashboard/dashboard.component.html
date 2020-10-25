@@ -1,0 +1,10 @@
+<st-header></st-header>
+<div class="container-fluid mt-3">
+  <h1 class="header">Minesweep</h1>
+  <div class="d-flex justify-content-center dashboard mt-4">
+    <st-board [game]="game"></st-board>
+    <button name="restart" class="btn btn-sm dashboard__reset" (click)="restart()">
+      <i class="far fa-play-circle fa-3x"></i>
+    </button>
+  </div>
+</div>

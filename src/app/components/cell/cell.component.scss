@@ -1,0 +1,58 @@
+$beaten: #FF0000;
+$hover: #D0D0D0;
+$discovered: #606060;
+$discovered-beaten: #B0B0B0;
+$font: #FFF;
+$flag-color: #00b300;
+
+.cell {
+    margin: -1px -1px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
+    padding-top: calc((100% - 50%) - 0.5rem);
+    color: $font;
+
+    h3 {
+      line-height: unset;
+    }
+
+    span.mine {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    &.mine, &.discovered.mine.beaten {
+      background-color: $beaten;
+    }
+
+    &.discovered.beaten {
+      background-color: $discovered-beaten;
+    }
+
+    &.flag {
+      background-color: $flag-color;
+      span {
+          color: $font;
+          font-size: 1.75rem;
+      }
+    }
+
+    &:hover {
+      background: $hover;
+      cursor: pointer;
+    }
+
+    .discovered {
+      background-color: $discovered;
+      :hover {
+          background: unset;
+          cursor: unset;
+      }
+    }
+
+}
+

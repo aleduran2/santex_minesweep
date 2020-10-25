@@ -1,0 +1,46 @@
+<st-header></st-header>
+<div class="container-fluid mt-3">
+  <h1 class="header">Finished games</h1>
+  <div class="d-flex justify-content-center container">
+      <table class="table mt-4 finished__container">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+            <th scope="col" sortable="difficulty" [direction]="getSortDirection(0)" (sort)="onSort($event, 0)" class="sort">Difficulty
+              <i class="fas " [ngClass]="getSortIcon()" aria-hidden="true"></i>
+            </th>
+            <th scope="col" sortable="spendTime" [direction]="getSortDirection(1)" (sort)="onSort($event, 1)" class="sort">Total time spent (m)
+              <i class="fas " [ngClass]="getSortIcon()" aria-hidden="true"></i>
+            </th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let game of games">
+            <td>
+              {{ game.id }}
+            </td>
+            <td>
+                {{ game.startTime | date: 'dd/MM/yyyy hh:mm' }}
+            </td>
+            <td>
+                {{ game.endTime | date: 'dd/MM/yyyy hh:mm' }}
+            </td>
+            <td>
+                {{ game.difficulty }}
+            </td>
+            <td>
+                {{ game.spendTime }}
+            </td>
+            <td>
+                <span class="badge" [ngClass]="{
+                  'badge-success':  game.status === 'WON',
+                  'badge-danger':  game.status !== 'WON'
+                 }">{{ game.status }}</span>
+            </td>
+          </tr>
+      </table>
+    </div>
+</div>

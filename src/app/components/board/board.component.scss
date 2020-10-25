@@ -1,0 +1,17 @@
+$board-back-color: lightgray;
+$board-border-color: gray;
+
+.board {
+    &__td {
+        position: relative;
+        border: 1px solid $board-back-color;
+        background: $board-border-color;
+        width: 45px;
+
+        &:after {
+          content: '';
+          display: block;
+          margin-top: 100%;
+        }
+    }
+}

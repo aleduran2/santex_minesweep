@@ -1,0 +1,11 @@
+<table class="col board mb-4">
+    <tbody>
+        <ng-container *ngIf="game">
+            <tr *ngFor="let row of game.getMatrix(); index as rowIndex;">
+                <td *ngFor="let cell of row; index as columnIndex;" class="board__td">
+                  <st-cell [cell]="cell" (clickCell)="clickCell(rowIndex, columnIndex)" (markCell)="markCell(rowIndex, columnIndex)" (flagCell)="flagCell(rowIndex, columnIndex)"></st-cell>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

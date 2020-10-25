@@ -1,0 +1,17 @@
+<div class="cell"
+    (click)="click()"
+    (contextmenu)="contextmenu($event)"
+    [class.discovered]="cell.discovered"
+    [class.mine]="cell.discovered && cell.isMine"
+    [class.flag]="cell.isFlag"
+    [class.beaten]="cell.beaten">
+    <span *ngIf="cell.isFlag" class="flag">F</span>
+    <ng-container *ngIf="cell.discovered && !cell.isFlag">
+        <span *ngIf="cell.isMine; else probabilityBlock" class="mine">X</span>
+        <ng-template #probabilityBlock>
+            <ng-container *ngIf="cell.probability > 0">
+                <h3>{{ cell.probability }}</h3>
+            </ng-container>
+        </ng-template>
+    </ng-container>
+</div>

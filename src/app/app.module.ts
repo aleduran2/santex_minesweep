@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BoardComponent } from './components/board/board.component';
 import { CellComponent } from './components/cell/cell.component';
@@ -28,7 +27,6 @@ import { SortableHeaderDirective } from './directives/sortable-header.directive'
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
   ],
